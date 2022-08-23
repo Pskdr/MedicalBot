@@ -1,63 +1,54 @@
 import React from "react";
 import {
-        Box,
-        Container,
-        Row,
-        Column,
-        FooterLink,
-        Heading,
-    } from "./FooterStyles";
+  Box,
+  Container,
+  Row,
+  Column,
+  FooterLink,
+  Heading,
+} from "./FooterStyles";
 
 const Footer = () => {
-return (
-
+  return (
     <footer>
-        <Box>
-            <h1 style={{ color: "green",
-                        textAlign: "center",
-                        marginTop: "-50px" }}>
-                Making a nice footer
-            </h1>
+      <Box>
+        <h1 style={{ color: "green", textAlign: "center", marginTop: "-50px" }}>
+          Making a nice footer
+        </h1>
         <Container>
-            <Row>
+          <Row>
             <Column>
-                <Heading>About Us</Heading>
-                <FooterLink href="#">Aim</FooterLink>
-                <FooterLink href="#">Vision</FooterLink>
+              <Heading>About Us</Heading>
+              <FooterLink href="#">Aim</FooterLink>
+              <FooterLink href="#">Vision</FooterLink>
             </Column>
             <Column>
-                <Heading>Services</Heading>
-                <FooterLink href="#">Writing</FooterLink>
-                <FooterLink href="#">Internships</FooterLink>
+              <Heading>Services</Heading>
+              <FooterLink href="#">Writing</FooterLink>
+              <FooterLink href="#">Internships</FooterLink>
             </Column>
             <Column>
-                <Heading>Contact Us</Heading>
-                <FooterLink href="#">Uttar Pradesh</FooterLink>
-                <FooterLink href="#">Ahemdabad</FooterLink>
+              <Heading>Contact Us</Heading>
+              <FooterLink href="#">Uttar Pradesh</FooterLink>
+              <FooterLink href="#">Ahemdabad</FooterLink>
             </Column>
             <Column>
-                <Heading>Social Media</Heading>
-                <FooterLink href="#">
+              <Heading>Social Media</Heading>
+              <FooterLink href="#">
                 <i className="fab fa-facebook-f">
-                    <span style={{ marginLeft: "10px" }}>
-                    Facebook
-                    </span>
+                  <span style={{ marginLeft: "10px" }}>Facebook</span>
                 </i>
-                </FooterLink>
-                <FooterLink href="#">
+              </FooterLink>
+              <FooterLink href="#">
                 <i className="fab fa-instagram">
-                    <span style={{ marginLeft: "10px" }}>
-                    Instagram
-                    </span>
+                  <span style={{ marginLeft: "10px" }}>Instagram</span>
                 </i>
-                </FooterLink>
+              </FooterLink>
             </Column>
-            </Row>
+          </Row>
         </Container>
-        </Box>
-
+      </Box>
     </footer>
-	
-);
+  );
 };
 export default Footer;
