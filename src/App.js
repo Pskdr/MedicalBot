@@ -5,12 +5,10 @@ import Footer from './components/footerComponent/Footer';
 
 function App() {
   return (
-    <div>
 
-      <div className="App">
-        <Header/>
+    <div className="App">
+      <Header/>
 
-      </div>
       
       <Footer/>
     </div>
