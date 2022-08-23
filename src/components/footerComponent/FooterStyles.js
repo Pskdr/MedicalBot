@@ -5,7 +5,7 @@ export const Box = styled.div`
   background: black;
   position: relative;
   bottom: 0;
-  width: 100%;
+  width: auto;
 
   @media (max-width: 1000px) {
     padding: 70px 30px;
@@ -16,7 +16,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 500px;
   margin: 0 auto;
   /* background: red; */
 `;
