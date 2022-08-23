@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Box = styled.div`
 padding: 50px 30px;
 background: black;
-position: absolute;
+position: relative;
 bottom: 0;
 width: 100%;
 
@@ -56,5 +56,6 @@ text-decoration: none;
 export const Heading = styled.p`
 font-size: 24px;
 color: #fff;
+margin-bottom: 20px;
 font-weight: bold;
 `;
