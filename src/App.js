@@ -22,12 +22,11 @@ function App() {
       {cargando ? (
         <Body />
       ) : (
-        <div>
+        <div className="App-login">
           <Spinner />
           <Button guardarCargando={guardarCargando} cargando={cargando} />
         </div>
       )}
-
       <Footer />
     </div>
   );
