@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../logo.svg";
 import "../App.css";
 
-const Header = () => {
+const Body = () => {
   return (
     <header className="App-header">
       <iframe
@@ -15,4 +15,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Body;
