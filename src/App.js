@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./App.css";
 import Body from "./components/Body";
 import Footer from "./components/footerComponent/Footer";
@@ -9,15 +9,22 @@ import Button from "./components/Button/Button";
 function App() {
   const [cargando, guardarCargando] = useState(false);
 
+  // useLayoutEffect(() => {
+  //   guardarCargando(false);
+
+  //   return () => {
+  //     guardarCargando(false);
+  //   };
+  // }, []);
   return (
     <div className="App">
       <Header />
-      {!cargando ? (
+      {cargando ? (
         <Body />
       ) : (
         <div>
           <Spinner />
-          <Button guardarCargando={guardarCargando} />
+          <Button guardarCargando={guardarCargando} cargando={cargando} />
         </div>
       )}
 

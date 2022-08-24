@@ -23,10 +23,15 @@ const Boton = styled.input`
   }
 `;
 
-const Button = ({ guardarCargando }) => {
+const Button = ({ guardarCargando, cargando }) => {
+  const onSubmit = (e) => {
+    console.log(cargando);
+    e.preventDefault();
+    guardarCargando(!cargando);
+  };
   return (
-    <Form>
-      <Boton type="submit" value="Empecemos" onSubmit={guardarCargando(true)} />
+    <Form onSubmit={(e) => onSubmit(e)}>
+      <Boton type="submit" value="Empecemos" />
     </Form>
   );
 };
