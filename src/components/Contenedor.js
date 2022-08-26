@@ -3,7 +3,7 @@ import Login from "./loginComponents/Login";
 import Register from "./loginComponents/Register";
 
 const Contenedor = ({ guardarCargando }) => {
-  const [mostrarLogin, guardarMostrar] = useState(true);
+  const [mostrarLogin, guardarMostrar] = useState(false);
 
   return (
     <div>

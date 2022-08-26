@@ -15,9 +15,9 @@ const Login = ({ guardarMostrar }) => {
 
   return (
     <div className="contiene">
-      <form>
-        <div className="Contenedor" onSubmit={onSubmit}>
-          <h1>Inicio de Sesión</h1>
+      <form className="formulario" onSubmit={onSubmit}>
+        <div className="Contenedor">
+          <h1 className="h1">Inicio de Sesión</h1>
           <i className="fa-solid fa-envelope icon"></i>
           <input
             type="email"
@@ -31,6 +31,11 @@ const Login = ({ guardarMostrar }) => {
         </div>
         <input type="submit" className="button" />
       </form>
+      <p>
+        Al iniciar sesión, aceptas nuestras condiciones de uso y politicas de
+        privacidad.
+      </p>
+      <p>¿No tienes cuenta?</p>
     </div>
   );
 };
