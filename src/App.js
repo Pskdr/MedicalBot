@@ -3,6 +3,7 @@ import "./App.css";
 import Body from "./components/Body";
 import Footer from "./components/footerComponent/Footer";
 import Header from "./components/headerComponent/Header";
+import Contenedor from "./components/Contenedor";
 import Spinner from "./components/spinnerComponents/Spinner";
 import Button from "./components/Button/Button";
 
@@ -23,8 +24,7 @@ function App() {
         <Body />
       ) : (
         <div className="App-login">
-          <Spinner />
-          <Button guardarCargando={guardarCargando} cargando={cargando} />
+          <Contenedor guardarCargando={guardarCargando} />
         </div>
       )}
       <Footer />
