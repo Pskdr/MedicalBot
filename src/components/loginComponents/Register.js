@@ -48,6 +48,7 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
         {error ? <Error texto={texto} /> : null}
         <div className="campo">
           <label>Usuario</label>
+          <br></br>
           <input
             type="text"
             name="userName"
