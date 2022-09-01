@@ -1,0 +1,116 @@
+.contiene {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    min-height: 50vh;
+    min-width: 70vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+
+
+
+}
+.campo {
+    color: #15191f;
+}
+
+.formulario {
+    background: #fff;
+    margin-top: 150px;
+    padding: 7px;
+    text-align: center;
+}
+.error{
+    width: 100%;
+    background-color: red;
+    color: #fff;
+}
+h2{
+    color: #000;
+}
+
+.h1 {
+    text-align: center;
+    color: #15191f;
+    font-size: 40px;
+}
+
+input {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    text-align: center;
+    border: 1px;
+}
+
+.input:hover {
+    border: 1px solid #000;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+.registrarse {
+    font-size: small;
+    font-style: bold;
+    width: auto;
+}
+.registrarse:hover{
+    text-decoration: underline
+}
+
+
+
+.button {
+    border: none;
+    width: 50%;
+    color: white;
+    font-size: 20px;
+    background: #15191f;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: cadetblue;
+}
+
+p {
+    text-align: center;
+    color: #15191f;
+    font-size: small;
+}
+
+.link {
+    text-decoration: none;
+    color: #15191f;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: cadetblue;
+}
+
+@media(min-width:768px) {
+    .formulario {
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}

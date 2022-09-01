@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useLayoutEffect, useState } from "react";
+import "./App.css";
+import Body from "./components/Body";
+import Footer from "./components/footerComponent/Footer";
+import Header from "./components/headerComponent/Header";
+import Contenedor from "./components/Contenedor";
+import Spinner from "./components/spinnerComponents/Spinner";
+import Button from "./components/Button/Button";
 
 function App() {
+  const [cargando, guardarCargando] = useState(false);
+  const [user, guardarUser] = useState({
+    userName: "",
+    password: "",
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="App-all">
+        {cargando ? (
+          <Body />
+        ) : (
+          <div className="App-login">
+            <Contenedor guardarCargando={guardarCargando} cargando={cargando} />
+          </div>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }
