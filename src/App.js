@@ -9,24 +9,23 @@ import Button from "./components/Button/Button";
 
 function App() {
   const [cargando, guardarCargando] = useState(false);
+  const [user, guardarUser] = useState({
+    userName: "",
+    password: "",
+  });
 
-  // useLayoutEffect(() => {
-  //   guardarCargando(false);
-
-  //   return () => {
-  //     guardarCargando(false);
-  //   };
-  // }, []);
   return (
     <div className="App">
       <Header />
-      {cargando ? (
-        <Body />
-      ) : (
-        <div className="App-login">
-          <Contenedor guardarCargando={guardarCargando} />
-        </div>
-      )}
+      <div className="App-all">
+        {cargando ? (
+          <Body />
+        ) : (
+          <div className="App-login">
+            <Contenedor guardarCargando={guardarCargando} cargando={cargando} />
+          </div>
+        )}
+      </div>
       <Footer />
     </div>
   );

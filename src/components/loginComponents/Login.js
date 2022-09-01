@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-const Login = ({ guardarMostrar }) => {
+const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
   const [user, guardarUser] = useState({
     userName: "",
     password: "",
@@ -9,33 +9,48 @@ const Login = ({ guardarMostrar }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    guardarCargando(!cargando);
   };
 
   const { userName, password } = user;
+  const onClick = (e) => {
+    e.preventDefault();
+    guardarMostrar(!mostrarLogin);
+  };
 
   return (
-    <div className="contiene">
-      <form className="formulario" onSubmit={onSubmit}>
-        <div className="Contenedor">
-          <h1 className="h1">Inicio de Sesión</h1>
-          <i className="fa-solid fa-envelope icon"></i>
+    <div>
+      <form onSubmit={(e) => onSubmit(e)}>
+        <h2>Login</h2>
+
+        <div className="campo">
+          <label>Usuario</label>
           <input
-            type="email"
-            placeholder="Correo electrónico"
+            type="text"
+            className="input"
             value={userName}
+            placeholder="juan@hotmail.com"
           />
         </div>
-        <div className="contenedor">
-          <i className="fa-solid fa-life-ring icon" />
-          <input type="password" placeholder="contraseña" value={password} />
+
+        <div className="campo">
+          <label>Contraseña</label>
+          <input
+            type="password"
+            value={password}
+            className="u-full-width input"
+          />
         </div>
-        <input type="submit" className="button" />
+
+        <input type="submit" className="button" value="Ingresar" />
       </form>
-      <p>
-        Al iniciar sesión, aceptas nuestras condiciones de uso y politicas de
-        privacidad.
-      </p>
-      <p>¿No tienes cuenta?</p>
+
+      <p>¿No recuerdas tu contraseña?</p>
+      <input
+        onClick={(e) => onClick(e)}
+        value="Registrarse"
+        className="registrarse"
+      />
     </div>
   );
 };

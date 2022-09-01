@@ -62,6 +62,7 @@ h2 {
 
 .error {
     text-align: center;
+    color: #e1e1e1;
 }
 
 .alert {
@@ -117,6 +118,7 @@ h2 {
     align-items: center;
     margin: 0;
 }
+
 
 .gastos-realizados li p .gasto {
     background-color: #004085;
