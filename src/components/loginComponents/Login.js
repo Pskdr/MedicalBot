@@ -18,6 +18,13 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
     guardarMostrar(!mostrarLogin);
   };
 
+  const actualizarState = (e) => {
+    guardarUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div>
       <form onSubmit={(e) => onSubmit(e)}>
@@ -28,8 +35,10 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
           <input
             type="text"
             className="input"
+            name="userName"
             value={userName}
             placeholder="juan@hotmail.com"
+            onChange={actualizarState}
           />
         </div>
 
@@ -37,7 +46,9 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
           <label>Contraseña</label>
           <input
             type="password"
+            name="password"
             value={password}
+            onChange={actualizarState}
             className="u-full-width input"
           />
         </div>

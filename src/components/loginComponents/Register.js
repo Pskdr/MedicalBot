@@ -6,10 +6,10 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
   const [userRegistro, guardarUser] = useState({
     userName: "",
     password: "",
-    confirmPaswword: "",
+    confirmPassword: "",
   });
 
-  const { userName, password, confirmPaswword } = userRegistro;
+  const { userName, password, confirmPassword } = userRegistro;
 
   const [error, guardarError] = useState(false);
 
@@ -17,8 +17,8 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (!(password.trim() === "" && confirmPaswword.trim() === "")) {
-      if ((password.trim() === confirmPaswword.trim()) === "") {
+    if (!(password.trim() === "" && confirmPassword.trim() === "")) {
+      if ((password.trim() === confirmPassword.trim()) === "") {
         guardarError(false);
         guardarCargando(!cargando);
       } else {
@@ -34,6 +34,13 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
     }
   };
 
+  const actualizarState = (e) => {
+    guardarUser({
+      ...userRegistro,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div>
       <form onSubmit={(e) => onSubmit(e)}>
@@ -43,7 +50,9 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
           <label>Usuario</label>
           <input
             type="text"
+            name="userName"
             className="input"
+            onChange={actualizarState}
             value={userName}
             placeholder="juan@hotmail.com"
           />
@@ -51,11 +60,23 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
 
         <div className="campo">
           <label>Contraseña</label>
-          <input className="input" type="password" value={password} />
+          <input
+            className="input"
+            type="password"
+            name="password"
+            onChange={actualizarState}
+            value={password}
+          />
         </div>
         <div className="campo">
           <label>repetir Contraseña</label>
-          <input className="input" type="password" value={confirmPaswword} />
+          <input
+            className="input"
+            type="password"
+            name="confirmPassword"
+            onChange={actualizarState}
+            value={confirmPassword}
+          />
         </div>
 
         <input type="submit" className="button" value="Registrarse" />
