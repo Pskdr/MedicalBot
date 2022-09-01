@@ -19,6 +19,7 @@ const Contenedor = ({ guardarCargando, cargando }) => {
           guardarMostrar={guardarMostrar}
           guardarCargando={guardarCargando}
           cargando={cargando}
+          mostrarLogin={mostrarLogin}
         />
       )}
     </div>

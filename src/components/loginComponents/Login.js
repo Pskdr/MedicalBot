@@ -52,7 +52,7 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
             className="u-full-width input"
           />
         </div>
-
+        <br></br>
         <input type="submit" className="button" value="Ingresar" />
       </form>
 
