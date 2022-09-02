@@ -1,17 +1,17 @@
-# Base image 
+#Base image 
 FROM node:15.13-alpine
 
-# open port 3000 
+#Open port 3000 
 EXPOSE 3000
 
-# project dir
+#Establish project dir
 WORKDIR /MedicalBot
 
-# copy files from local to cointainer
+#Copy files from local to cointainer
 COPY . .
 
-# build project 
-RUN npm run build
+#Install dependencies
+RUN npm install
 
-# start npm scripts
+#Start npm scripts in mode DEVELOPMENT 
 CMD ["npm", "start"]
