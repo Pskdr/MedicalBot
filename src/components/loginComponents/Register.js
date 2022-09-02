@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./styles.css";
 import Error from "./Error";
 
-const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
+const Register = ({
+  guardarMostrar,
+  guardarCargando,
+  cargando,
+  mostrarLogin,
+}) => {
   const [userRegistro, guardarUser] = useState({
     userName: "",
     password: "",
@@ -41,6 +46,12 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
     });
   };
 
+  const onClick = (e) => {
+    e.preventDefault();
+
+    guardarMostrar(!mostrarLogin);
+  };
+
   return (
     <div>
       <form onSubmit={(e) => onSubmit(e)}>
@@ -55,7 +66,7 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
             className="input"
             onChange={actualizarState}
             value={userName}
-            placeholder="juan@hotmail.com"
+            placeholder=""
           />
         </div>
 
@@ -79,9 +90,16 @@ const Register = ({ guardarMostrar, guardarCargando, cargando }) => {
             value={confirmPassword}
           />
         </div>
-
+        <br></br>
         <input type="submit" className="button" value="Registrarse" />
       </form>
+
+      <p>¿Ya tienes una cuenta?</p>
+      <input
+        onClick={(e) => onClick(e)}
+        value="Iniciar sesión"
+        className="registrarse"
+      />
     </div>
   );
 };
