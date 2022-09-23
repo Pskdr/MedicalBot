@@ -4,6 +4,7 @@ import Body from "./components/Body";
 import Footer from "./components/footerComponent/Footer";
 import Header from "./components/headerComponent/Header";
 import Contenedor from "./components/Contenedor";
+import Link from "./components/Link/Link";
 import Spinner from "./components/spinnerComponents/Spinner";
 import Button from "./components/Button/Button";
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Link />
       <div className="App-all">
         {cargando ? (
           <Body />
