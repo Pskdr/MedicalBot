@@ -31,7 +31,8 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
         <h2>Login</h2>
 
         <div className="campo">
-          <label>Usuario</label>
+          <label>User</label> 
+          <br/>
           <input
             type="text"
             className="input"
@@ -43,7 +44,7 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
         </div>
 
         <div className="campo">
-          <label>Contraseña</label>
+          <label>password</label>
           <input
             type="password"
             name="password"
@@ -53,13 +54,13 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
           />
         </div>
         <br></br>
-        <input type="submit" className="button" value="Ingresar" />
+        <input type="submit" className="button" value="Login" />
       </form>
 
-      <p>¿No recuerdas tu contraseña?</p>
+      <p>Did you forget your password?</p>
       <input
         onClick={(e) => onClick(e)}
-        value="Registrarse"
+        value="Sign in"
         className="registrarse"
       />
     </div>

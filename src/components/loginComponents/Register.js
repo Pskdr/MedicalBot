@@ -28,13 +28,13 @@ const Register = ({
         guardarCargando(!cargando);
       } else {
         //ERROR
-        texto = "Las contraseñas no son iguales";
+        texto = "Passwords are not the same";
         guardarError(true);
       }
     } else {
       //ERROR
 
-      texto = "Todos los campos son obligatorios";
+      texto = "All fields are required";
       guardarError(true);
     }
   };
@@ -58,7 +58,7 @@ const Register = ({
         <h2>Register</h2>
         {error ? <Error texto={texto} /> : null}
         <div className="campo">
-          <label>Usuario</label>
+          <label>User</label>
           <br></br>
           <input
             type="text"
@@ -71,7 +71,7 @@ const Register = ({
         </div>
 
         <div className="campo">
-          <label>Contraseña</label>
+          <label>Password</label>
           <input
             className="input"
             type="password"
@@ -81,7 +81,7 @@ const Register = ({
           />
         </div>
         <div className="campo">
-          <label>repetir Contraseña</label>
+          <label>Repeat password</label>
           <input
             className="input"
             type="password"
@@ -91,13 +91,13 @@ const Register = ({
           />
         </div>
         <br></br>
-        <input type="submit" className="button" value="Registrarse" />
+        <input type="submit" className="button" value="Sign in" />
       </form>
 
-      <p>¿Ya tienes una cuenta?</p>
+      <p>Do you have an account?</p>
       <input
         onClick={(e) => onClick(e)}
-        value="Iniciar sesión"
+        value="Login"
         className="registrarse"
       />
     </div>
