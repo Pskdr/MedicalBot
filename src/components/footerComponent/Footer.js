@@ -18,32 +18,14 @@ const Footer = () => {
         <Container>
           <Row>
             <Column>
-              <Heading>Develop by: </Heading>
+              <Heading>Develop By</Heading>
               <FooterLink href="#">Juan Camilo</FooterLink>
               <FooterLink href="#">Leon</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Services</Heading>
               <FooterLink href="#">Jhoan</FooterLink>
               <FooterLink href="#">Cesar</FooterLink>
             </Column>
             <Column>
-              <Heading>Contact Us</Heading>
-              <FooterLink href="#">Uttar Pradesh</FooterLink>
-              <FooterLink href="#">Ahemdabad</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Social Media</Heading>
-              <FooterLink href="#">
-                <i className="fab fa-facebook-f">
-                  <span style={{ marginLeft: "10px" }}>Facebook</span>
-                </i>
-              </FooterLink>
-              <FooterLink href="#">
-                <i className="fab fa-instagram">
-                  <span style={{ marginLeft: "10px" }}>Instagram</span>
-                </i>
-              </FooterLink>
+              <Heading></Heading>
             </Column>
           </Row>
         </Container>

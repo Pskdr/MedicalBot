@@ -9,10 +9,8 @@ const Header = () => {
       </a>
       <div className="header-right">
         <a className="active" href="#home">
-          Home
+          Tri-Bot
         </a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
       </div>
     </div>
   );
