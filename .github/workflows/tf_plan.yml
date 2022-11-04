@@ -2,7 +2,7 @@ name: Deploy Docker Image AWS
 
 on:
   push:
-    branches: [release]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
