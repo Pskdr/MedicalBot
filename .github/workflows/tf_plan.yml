@@ -29,17 +29,17 @@ jobs:
 
       - name: Initialize Terraform
         run: |
-          cd terraform/
+          cd Terraform/
           terraform init -input=false
       - name: Plan Terraform
         id: plan
         continue-on-error: true
         run: |
-          cd terraform/
+          cd Terraform/
           terraform plan -input=false -no-color
       - name: Apply Terraform
         continue-on-error: true
         id: apply
         run: |
-          cd terraform/
+          cd Terraform/
           terraform apply --auto-approve -input=false
