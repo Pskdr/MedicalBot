@@ -2,11 +2,11 @@ name: Docker Image CI (create and push to DockerHub)
 
 on:
   push:
-    branches: "master"
+    branches: "develop"
   # push:
-  #   branches: [ "master" ]
+  #   branches: [ "develop" ]
   # pull_request:
-  #   branches: [ "master" ]
+  #   branches: [ "main" ]
 
 jobs:
   build:
@@ -15,12 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image to test if passes
-        run: docker build . --file Dockerfile --tag react-app:$(date +%s)
+        run: docker build . --file Dockerfile --tag react-app
 
   publish:
     runs-on: ubuntu-latest
-    enviroment:
-      name: front
 
     steps:
       - name: SetUp QEMU
@@ -38,5 +36,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: leo/react-app:$(date +%s)
-          # tags: user/user-mongo:$(date +%s)
+          tags: leo/react-app
+          # tags: leo/react-app
