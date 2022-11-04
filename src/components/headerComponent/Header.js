@@ -3,12 +3,12 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div class="header">
-      <a href="#default" class="logo">
+    <div className="header">
+      <a href="#default" className="logo">
         MedicalBot
       </a>
-      <div class="header-right">
-        <a class="active" href="#home">
+      <div className="header-right">
+        <a className="active" href="#home">
           Home
         </a>
         <a href="#contact">Contact</a>

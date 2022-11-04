@@ -23,7 +23,7 @@ const Register = ({
     e.preventDefault();
 
     if (!(password.trim() === "" && confirmPassword.trim() === "")) {
-      if ((password.trim() === confirmPassword.trim()) === "") {
+      if (password.trim() === confirmPassword.trim()) {
         guardarError(false);
         guardarCargando(!cargando);
       } else {
