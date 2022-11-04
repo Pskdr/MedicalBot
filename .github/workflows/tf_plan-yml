@@ -2,7 +2,7 @@ name: Terraform create infrastructure and test
 
 on:
   push:
-    branches: "main"
+    branches: "master"
 
 jobs:
   build:
