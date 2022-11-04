@@ -19,8 +19,6 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    enviroment:
-      name: front
 
     steps:
       - name: SetUp QEMU
