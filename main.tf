@@ -29,7 +29,7 @@ resource "aws_instance" "app_server" {
     sudo service docker start
     sudo usermod -a -G docker ec2-user
     sudo docker pull nginx
-    sudo docker run -d 180
+    sudo docker run -d -p 80:80 nginx
  EOF
 }
  
