@@ -24,12 +24,11 @@ export const Container = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
   margin-left: 60px;
 `;
 
 export const Row = styled.div`
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
   grid-gap: 20px;
 

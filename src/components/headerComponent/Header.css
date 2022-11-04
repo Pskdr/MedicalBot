@@ -30,7 +30,9 @@
 
 /* Style the active/current link*/
 .header a.active {
-    background-color: #04AA6D;
+    background-color: rgba(224,
+        169,
+        18);
     color: white;
 }
 
