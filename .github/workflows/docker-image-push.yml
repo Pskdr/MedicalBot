@@ -15,12 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image to test if passes
-        run: docker build . --file Dockerfile --tag api-mongo:$(date +%s)
+        run: docker build . --file Dockerfile --tag react-app:$(date +%s)
 
   publish:
     runs-on: ubuntu-latest
     enviroment:
-      name: api
+      name: front
 
     steps:
       - name: SetUp QEMU
@@ -38,5 +38,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: leo/api-mongo:$(date +%s)
+          tags: leo/react-app:$(date +%s)
           # tags: user/user-mongo:$(date +%s)
