@@ -18,7 +18,7 @@ const Footer = () => {
         <Container>
           <Row>
             <Column>
-              <Heading>About Us</Heading>
+              <Heading>Develop by</Heading>
               <FooterLink href="#">Aim</FooterLink>
               <FooterLink href="#">Vision</FooterLink>
             </Column>
