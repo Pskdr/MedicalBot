@@ -28,8 +28,8 @@ resource "aws_instance" "app_server" {
     sudo yum install docker -y
     sudo service docker start
     sudo usermod -a -G docker ec2-user
-    sudo docker pull nginx
-    sudo docker run -d -p 80:80 nginx
+    sudo docker pull leoavalos/react-app:pr-15
+    sudo docker run -d -p 80:3000 --name tri-bot leoavalos/react-app:pr-15
  EOF
 }
  
