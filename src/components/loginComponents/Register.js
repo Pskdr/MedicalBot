@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
 import Error from "./Error";
+import axios from 'axios';
+import swal from 'sweetalert';
 
 const Register = ({
   guardarMostrar,
@@ -12,9 +14,10 @@ const Register = ({
     userName: "",
     password: "",
     confirmPassword: "",
+    email: "",
   });
 
-  const { userName, password, confirmPassword } = userRegistro;
+  const { userName, password, confirmPassword, email } = userRegistro;
 
   const [error, guardarError] = useState(false);
 
@@ -25,14 +28,26 @@ const Register = ({
     if (!(password.trim() === "" && confirmPassword.trim() === "")) {
       if (password.trim() === confirmPassword.trim()) {
         guardarError(false);
-        guardarCargando(!cargando);
+        User()
       } else {
-        //ERROR
-        texto = "Passwords are not the same";
+          swal({
+            title: 'Error',
+            text: 'Las contraseñas no coinsiden',
+            icon: 'error', // error, success, info
+            button: 'Aceptar',
+            timer: '3000'
+          })        
+          texto = "Passwords are not the same";
         guardarError(true);
       }
     } else {
-      //ERROR
+      swal({
+        title: 'Error',
+        text: 'All fields are required',
+        icon: 'error', // error, success, info
+        button: 'Aceptar',
+        timer: '3000'
+      })
 
       texto = "All fields are required";
       guardarError(true);
@@ -51,6 +66,54 @@ const Register = ({
 
     guardarMostrar(!mostrarLogin);
   };
+  async function User() {
+
+    let usuario = { nombre: userRegistro.userName, password: userRegistro.password, email: userRegistro.email };
+
+
+    let res = await axios.post('http://localhost:4000', usuario).catch(function (error) {
+      if (error.response) {
+        // La respuesta fue hecha y el servidor respondió con un código de estado
+        // que esta fuera del rango de 2xx
+        console.log(error.response.status);
+        if (error.response.status === 400) {
+          swal({
+            title: 'Error',
+            text: 'El usuario ya existe',
+            icon: 'error', // error, success, info
+            button: 'Aceptar',
+            timer: '3000'
+          })
+        }
+      } else if (error.request) {
+        // La petición fue hecha pero no se recibió respuesta
+        // `error.request` es una instancia de XMLHttpRequest en el navegador y una instancia de
+        // http.ClientRequest en node.js
+        console.log(error.request);
+      } else {
+        // Algo paso al preparar la petición que lanzo un Error
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+    });
+
+
+    let data = res.data;
+    if (data.msg === 'success') {
+      swal({
+        title: `Bienvenido ${userRegistro.userName}`,
+        text: 'Cuenta creada exitosamente',
+        icon: 'success', // error, success, info
+        button: 'Aceptar',
+        timer: '3000'
+      })
+      guardarCargando(!cargando);
+    }
+    console.log(data);
+  }
+
+
+
 
   return (
     <div>
@@ -69,7 +132,18 @@ const Register = ({
             placeholder=""
           />
         </div>
-
+        <div className="campo">
+          <label>Email</label>
+          <br />
+          <input
+            type="text"
+            className="input"
+            name="email"
+            value={email}
+            placeholder=""
+            onChange={actualizarState}
+          />
+        </div>
         <div className="campo">
           <label>Password</label>
           <input

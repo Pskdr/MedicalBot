@@ -90,7 +90,7 @@ const Login = ({ guardarMostrar, guardarCargando, cargando, mostrarLogin }) => {
             className="input"
             name="email"
             value={email}
-            placeholder="juan@hotmail.com"
+            placeholder="Email"
             onChange={actualizarState}
           />
         </div>
